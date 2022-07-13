@@ -22,3 +22,25 @@ module.exports = {
     },
   ],
 };
+const path = require('path');
+
+module.exports = {
+  siteMetadata: {
+    title: `My Gatsby Site`,
+    siteUrl: `https://www.yourdomain.tld`,
+  },
+  plugins: [
+    {
+      resolve: '@builder.io/gatsby',
+      options: {
+        // Replace with your Public API Key
+        publicAPIKey: 10eeafbca2b642cdb3a5fdc34ef7635b,
+        templates: {
+          // Render every `page` model as a new page using the
+          // src/templates/page.jsx template based on the URL provided in Builder.io
+          page: path.resolve('src/templates/page.jsx'),
+        },
+      },
+    },
+  ],
+};
